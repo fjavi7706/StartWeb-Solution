@@ -5,28 +5,71 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
   background: #f0f4f8;
   color: #1e293b;
   line-height: 1.5;
-  padding: 2rem 1rem;
 }
 
+/* ===== NAVEGACIÓN STICKY ===== */
+.navbar {
+  position: sticky;
+  top: 0;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+  padding: 0.8rem 1rem;
+  z-index: 1000;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.nav-container {
+  max-width: 800px;
+  margin: 0 auto;
+  display: flex;
+  justify-content: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.nav-container a {
+  color: #1e293b;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.9rem;
+  padding: 0.4rem 0.8rem;
+  border-radius: 30px;
+  transition: all 0.2s ease;
+}
+
+
+/* Contenedor principal */
 .container {
   max-width: 800px;
   margin: 0 auto;
   background: white;
   border-radius: 24px;
   padding: 2rem;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
-/* Header */
+/* Header con foto de perfil */
 .header {
   text-align: center;
   margin-bottom: 2rem;
   padding-bottom: 1.5rem;
   border-bottom: 2px solid #e2e8f0;
+}
+
+/* Foto de perfil - círculo */
+.perfil-img {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #2c7a5e;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  margin-bottom: 1rem;
 }
 
 h1 {
@@ -36,17 +79,28 @@ h1 {
 }
 
 .subtitulo {
-   font-weight: 600;
+  font-weight: 600;
   color: #2c7a5e;
+  margin-bottom: 0.75rem;
 }
 
-
+.presentacion {
+  color: #475569;
+  font-size: 0.95rem;
+  max-width: 500px;
+  margin: 0 auto;
+}
 
 /* Secciones */
 .seccion {
   margin-bottom: 2rem;
   padding-bottom: 1rem;
   border-bottom: 1px solid #e2e8f0;
+  scroll-margin-top: 80px;
+}
+
+.seccion:last-of-type {
+  border-bottom: none;
 }
 
 h2 {
@@ -58,31 +112,35 @@ h2 {
   gap: 8px;
 }
 
-h2 i {
-  color: #2c7a5e;
-  font-size: 1.2rem;
-}
-
 .seccion p {
   color: #334155;
   margin-bottom: 0.5rem;
 }
 
-/* Tecnologías */
+/* Tecnologías - USANDO GRID (responsive) */
 .techs {
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(100px, auto));
   gap: 0.6rem;
   margin-top: 0.5rem;
 }
 
 .techs span {
   background: #e2e8f0;
-  padding: 0.25rem 0.9rem;
+  padding: 0.5rem 0.9rem;
   border-radius: 30px;
   font-size: 0.85rem;
   font-weight: 500;
   color: #1e4a3b;
+  text-align: center;
+  transition: all 0.2s ease;
+}
+
+.techs span:hover {
+  background: #2c7a5e;
+  color: white;
+  transform: translateY(-2px);
+  cursor: default;
 }
 
 /* Footer */
@@ -95,12 +153,50 @@ footer {
   border-top: 1px solid #e2e8f0;
 }
 
-/* Responsive */
+/* ===== RESPONSIVE ===== */
 @media (max-width: 600px) {
   .container {
     padding: 1.2rem;
+    margin: 0 0.5rem;
   }
+
   h1 {
     font-size: 1.6rem;
+  }
+
+  .perfil-img {
+    width: 90px;
+    height: 90px;
+  }
+
+  .nav-container {
+    gap: 0.8rem;
+  }
+
+  .nav-container a {
+    font-size: 0.8rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .seccion {
+    scroll-margin-top: 70px;
+  }
+
+  /* Grid más compacto en móvil */
+  .techs {
+    grid-template-columns: repeat(auto-fill, minmax(85px, auto));
+    gap: 0.5rem;
+  }
+
+  .techs span {
+    font-size: 0.75rem;
+    padding: 0.4rem 0.6rem;
+  }
+}
+
+/* Para pantallas muy pequeñas */
+@media (max-width: 480px) {
+  .techs {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
