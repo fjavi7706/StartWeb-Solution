@@ -1,0 +1,7 @@
+services:
+  landing:
+    build: .
+    ports:
+      - "8080:80"
+    container_name: landing-corporativa
+    restart: unless-stopped
