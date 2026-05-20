@@ -8,7 +8,18 @@ Este proyecto consiste en una landing pagina personal que se ejecuta dentro de u
 
 Para construir la imagen Docker del proyecto, ejecuta el siguiente comando en la terminal dentro de la carpeta del proyecto:
 
+**Paso 1:** Abrir la terminal (PowerShell en Windows, Terminal en Linux/Mac)
+
+**Paso 2:** Navegar a la carpeta del proyecto
+
+**Paso 3.1:** Construir la imagen Docker con Docker Compose
+
 docker-compose build
+
+**Paso 3.2:** Si no puede construir la imagen con Docker Compose pudes poner este comando:
+
+docker build -t mi-landing .
+
 
 ## ¿Cómo ejecutarlo?
 Una vez construida la imagen, levanta el contenedor con Docker Compose usando este comando:
