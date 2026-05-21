@@ -14,7 +14,7 @@ Para construir la imagen Docker del proyecto, ejecuta el siguiente comando en la
 
 **Paso 3.1:** Construir la imagen Docker con Docker Compose
 
-docker-compose build o docker run -d -p 8080:80 --name landing-container mi-landing
+docker-compose build 
 
 **Paso 3.2:** Si no puede construir la imagen con Docker Compose puedes poner este comando:
 
@@ -24,7 +24,7 @@ docker build -t mi-landing .
 ## ¿Cómo ejecutarlo?
 Una vez construida la imagen, levanta el contenedor con Docker Compose usando este comando:
 
-docker-compose run o docker run -d -p 8080:80 --name landing-container mi-landing
+docker-compose compas o docker run -d -p 8080:80 --name landing-container mi-landing
 
 ## ¿Cómo acceder a la web?
 
