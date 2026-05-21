@@ -24,7 +24,7 @@ docker build -t mi-landing .
 ## ¿Cómo ejecutarlo?
 Una vez construida la imagen, levanta el contenedor con Docker Compose usando este comando:
 
-docker-compose up
+docker-compose run o docker run -d -p 8080:80 --name landing-container mi-landing
 
 ## ¿Cómo acceder a la web?
 
